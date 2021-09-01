@@ -25,6 +25,4 @@ class SerialModel: FilmModelProtocol {
     func getDate() -> String {
         film.first_air_date?.convertDateFormater() ?? "Отсутствует"
     }
-    
-    
 }

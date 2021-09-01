@@ -10,33 +10,30 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="film" id="gTV-IL-0wX" customClass="FilmCollectionViewCell" customModule="FilmApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="102" height="140"/>
+            <rect key="frame" x="0.0" y="0.0" width="102" height="161"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="102" height="140"/>
+                <rect key="frame" x="0.0" y="0.0" width="102" height="161"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LUl-Hs-8UA">
-                        <rect key="frame" x="0.0" y="0.0" width="102" height="102"/>
+                        <rect key="frame" x="0.0" y="0.0" width="102" height="122"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="102" id="IMP-au-8jQ"/>
-                            <constraint firstAttribute="height" constant="102" id="l5E-q4-nxS"/>
+                            <constraint firstAttribute="height" constant="122" id="QLV-UB-YDa"/>
+                            <constraint firstAttribute="width" constant="102" id="kR7-Bd-BbW"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Kvn-1z-Rd4">
-                        <rect key="frame" x="0.0" y="106" width="102" height="16"/>
+                        <rect key="frame" x="0.0" y="125" width="102" height="16"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="16" id="mlN-yd-xPW"/>
+                            <constraint firstAttribute="height" constant="16" id="GaP-JA-kju"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ce-Zz-431">
-                        <rect key="frame" x="0.0" y="125" width="102" height="15"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="15" id="c9K-sk-tk0"/>
-                        </constraints>
+                        <rect key="frame" x="0.0" y="142" width="102" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -45,23 +42,23 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="LUl-Hs-8UA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="0Fd-94-AS2"/>
-                <constraint firstItem="Kvn-1z-Rd4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="8wg-Zn-cC9"/>
-                <constraint firstItem="Kvn-1z-Rd4" firstAttribute="top" secondItem="LUl-Hs-8UA" secondAttribute="bottom" constant="4" id="BOO-za-LAb"/>
-                <constraint firstAttribute="trailing" secondItem="Kvn-1z-Rd4" secondAttribute="trailing" id="S8B-me-h5b"/>
-                <constraint firstItem="9Ce-Zz-431" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Syt-jp-GII"/>
-                <constraint firstAttribute="trailing" secondItem="LUl-Hs-8UA" secondAttribute="trailing" id="koB-gw-y0H"/>
-                <constraint firstItem="LUl-Hs-8UA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="qmT-4U-LTe"/>
-                <constraint firstItem="9Ce-Zz-431" firstAttribute="top" secondItem="Kvn-1z-Rd4" secondAttribute="bottom" constant="3" id="sfC-n8-CVx"/>
-                <constraint firstAttribute="bottom" secondItem="9Ce-Zz-431" secondAttribute="bottom" id="wpy-s9-C8F"/>
-                <constraint firstAttribute="trailing" secondItem="9Ce-Zz-431" secondAttribute="trailing" id="z6W-P6-4MN"/>
+                <constraint firstItem="9Ce-Zz-431" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="4fo-01-7pf"/>
+                <constraint firstAttribute="trailing" secondItem="Kvn-1z-Rd4" secondAttribute="trailing" id="7iS-7T-Ms2"/>
+                <constraint firstItem="LUl-Hs-8UA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="NAm-Gk-wIp"/>
+                <constraint firstItem="Kvn-1z-Rd4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="PED-Dl-5iw"/>
+                <constraint firstItem="LUl-Hs-8UA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="SKH-U3-4Oj"/>
+                <constraint firstItem="9Ce-Zz-431" firstAttribute="top" secondItem="Kvn-1z-Rd4" secondAttribute="bottom" constant="1" id="Wfn-v4-im5"/>
+                <constraint firstAttribute="trailing" secondItem="9Ce-Zz-431" secondAttribute="trailing" id="h2v-bf-aTr"/>
+                <constraint firstItem="Kvn-1z-Rd4" firstAttribute="top" secondItem="LUl-Hs-8UA" secondAttribute="bottom" constant="3" id="mMb-OE-Lle"/>
+                <constraint firstAttribute="trailing" secondItem="LUl-Hs-8UA" secondAttribute="trailing" id="okO-3i-dOX"/>
+                <constraint firstAttribute="bottom" secondItem="9Ce-Zz-431" secondAttribute="bottom" constant="2" id="umY-hx-ZiJ"/>
             </constraints>
             <connections>
                 <outlet property="dateLabel" destination="9Ce-Zz-431" id="ddL-2I-8zZ"/>
                 <outlet property="filmImage" destination="LUl-Hs-8UA" id="goE-gl-ukP"/>
                 <outlet property="titleLabel" destination="Kvn-1z-Rd4" id="hYS-dy-yo3"/>
             </connections>
-            <point key="canvasLocation" x="111.59420289855073" y="108.48214285714285"/>
+            <point key="canvasLocation" x="111.59420289855073" y="108.14732142857143"/>
         </collectionViewCell>
     </objects>
 </document>

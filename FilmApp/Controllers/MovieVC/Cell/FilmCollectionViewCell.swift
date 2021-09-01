@@ -14,11 +14,11 @@ class FilmCollectionViewCell: UICollectionViewCell {
             titleLabel.text = model.getTitle()
             dateLabel.text = model.getDate()
             filmImage.fetchImage(from: model.getImage())
+            filmImage.layer.cornerRadius = 10
         }
     }
 
     @IBOutlet var filmImage: UIImageView!
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var titleLabel: UILabel!
-    
 }

@@ -39,6 +39,5 @@ extension UIImageView {
         let chacheedResponse = CachedURLResponse(response: response, data: data)
         let urlRequest = URLRequest(url: urlResponse)
         URLCache.shared.storeCachedResponse(chacheedResponse, for: urlRequest)
-         
     }
 }
