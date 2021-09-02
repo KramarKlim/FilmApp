@@ -67,9 +67,9 @@ class DetailModel: DetailModelProtocol {
     func getGenreYear() -> String {
         switch show {
         case .film:
-            return (detail?.release_date?.convertDateFormater(currentFormat: "yyyy-MM-dd", needFromat: "YYYY") ?? "Неизвестно") + ", " + (detail?.genres?.first?.name ?? "Неизвестно")
+            return (detail?.release_date?.convertDateFormater(currentFormat: "yyyy-MM-dd", needFromat: "YYYY") ?? "Неизвестно") + " • " + (detail?.genres?.first?.name ?? "Неизвестно") + " • " + (detail?.runtime?.minutesToHoursAndMinutes() ?? "Неизвестно")
         case .serial:
-            return (detail?.first_air_date?.convertDateFormater(currentFormat: "yyyy-MM-dd", needFromat: "YYYY") ?? "Неизвестно") + ", " + (detail?.genres?.first?.name ?? "Неизвестно")
+            return (detail?.first_air_date?.convertDateFormater(currentFormat: "yyyy-MM-dd", needFromat: "YYYY") ?? "Неизвестно") + " • " + (detail?.genres?.first?.name ?? "Неизвестно")
         }
     }
     

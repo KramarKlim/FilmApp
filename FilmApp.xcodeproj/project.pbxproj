@@ -35,6 +35,7 @@
 		4D5E327126DFC2E0004A7724 /* ActorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5E327026DFC2E0004A7724 /* ActorType.swift */; };
 		4D5E327326DFF73F004A7724 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5E327226DFF73F004A7724 /* Gradient.swift */; };
 		4D5E327526DFFC72004A7724 /* ActorsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5E327426DFFC72004A7724 /* ActorsModel.swift */; };
+		4D5E327726E14201004A7724 /* extension Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5E327626E141FF004A7724 /* extension Int.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		4D5E327026DFC2E0004A7724 /* ActorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorType.swift; sourceTree = "<group>"; };
 		4D5E327226DFF73F004A7724 /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 		4D5E327426DFFC72004A7724 /* ActorsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorsModel.swift; sourceTree = "<group>"; };
+		4D5E327626E141FF004A7724 /* extension Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extension Int.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 			children = (
 				4D5E324F26DECCE7004A7724 /* extension UIIMageView.swift */,
 				4D5E326126DF8127004A7724 /* extension Date.swift */,
+				4D5E327626E141FF004A7724 /* extension Int.swift */,
 				4D5E327226DFF73F004A7724 /* Gradient.swift */,
 			);
 			path = extension;
@@ -296,6 +299,7 @@
 				4D5E322726DE9099004A7724 /* AppDelegate.swift in Sources */,
 				4D5E322926DE9099004A7724 /* SceneDelegate.swift in Sources */,
 				4D5E326726DFB5B7004A7724 /* DetailModel.swift in Sources */,
+				4D5E327726E14201004A7724 /* extension Int.swift in Sources */,
 				4D5E327326DFF73F004A7724 /* Gradient.swift in Sources */,
 				4D5E326E26DFBC73004A7724 /* DetailType.swift in Sources */,
 				4D5E325026DECCE7004A7724 /* extension UIIMageView.swift in Sources */,

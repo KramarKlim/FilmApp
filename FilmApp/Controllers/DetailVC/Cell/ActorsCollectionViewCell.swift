@@ -33,6 +33,5 @@ class ActorsCollectionViewCell: UICollectionViewCell {
     private func setup() {
         isReuse = true
         actorImage.clipsToBounds = true
-        actorImage.layer.cornerRadius = 10
     }
 }
