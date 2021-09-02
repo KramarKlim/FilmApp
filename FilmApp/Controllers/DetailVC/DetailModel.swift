@@ -5,7 +5,7 @@
 //  Created by Клим on 01.09.2021.
 //
 
-import Foundation
+import UIKit
 import SafariServices
 
 protocol DetailModelProtocol {
@@ -26,9 +26,12 @@ protocol DetailModelProtocol {
     func getImage() -> String
     func actorsModel(indexPath: IndexPath) -> ActorsModelProtocol?
     func searchWeb() -> SFSafariViewController
+    func favouriteImage() -> UIImage
+    func saveImage(image: UIImage) -> UIImage
 }
 
 class DetailModel: DetailModelProtocol {
+        
     var show: CurrentShow
     
     var id: Int
@@ -97,5 +100,25 @@ class DetailModel: DetailModelProtocol {
         guard let url = URL(string: string) else { return SFSafariViewController(url: URL(string: DataManager.shared.getError(error: .web))!)}
         let homepage = SFSafariViewController(url: url)
         return homepage
+    }
+    
+    func favouriteImage() -> UIImage {
+        for images in DataManager.shared.favourite {
+            if id == images {
+                return  UIImage(systemName: "heart.fill")!
+            }
+        }
+        return UIImage(systemName: "heart")!
+    }
+    
+    func saveImage(image: UIImage) -> UIImage {
+        if image == UIImage(systemName: "heart") {
+            DataManager.shared.favourite.insert(id)
+            return UIImage(systemName: "heart.fill")!
+        } else if image == UIImage(systemName: "heart.fill")! {
+            DataManager.shared.favourite.remove(id)
+            return UIImage(systemName: "heart")!
+        }
+        return #imageLiteral(resourceName: "3126608")
     }
 }

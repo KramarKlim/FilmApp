@@ -29,8 +29,13 @@ class DetailViewController: UIViewController {
         actorsCollectionView.delegate = self
         actorsCollectionView.dataSource = self
         actorsCollectionView.register(UINib(nibName: "ActorsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "actors")
-        
+        favouriteButton.image = model.favouriteImage()
     }
+    
+    @IBAction func favouriteButtonAction(_ sender: Any) {
+        favouriteButton.image = model.saveImage(image: favouriteButton.image!)
+    }
+    
     
     @IBAction func watchButtonAction(_ sender: UIButton) {
         present(model.searchWeb(), animated: true)

@@ -11,8 +11,8 @@ import UIKit
 class DataManager {
      static let shared = DataManager()
     
-    let images: [UIImage?] = [UIImage(named: "heart")]
-        
+    var favourite = Set<Int>()
+            
     private init() {}
     
     func getShowList(show: CurrentShow) -> String {
@@ -25,9 +25,7 @@ class DataManager {
     func getDetail(detail: CurrentShow, id: Int) -> String {
         switch detail {
         case .film: return "https://api.themoviedb.org/3/movie/\(id)?api_key=b20dda5a33582cd5efa3a442b91f10ec"
- //           https://api.themoviedb.org/3/movie/573164?api_key=b20dda5a33582cd5efa3a442b91f10ec
         case .serial: return "https://api.themoviedb.org/3/tv/\(id)?api_key=b20dda5a33582cd5efa3a442b91f10ec"
-            //https://api.themoviedb.org/3/tv/91363?api_key=b20dda5a33582cd5efa3a442b91f10ec
         }
     }
     

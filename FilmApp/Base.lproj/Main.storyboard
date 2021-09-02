@@ -232,7 +232,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="XlU-nD-SXW">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="heart" catalog="system" id="uOW-DQ-dEm"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="heart" catalog="system" id="uOW-DQ-dEm">
+                            <connections>
+                                <action selector="favouriteButtonAction:" destination="2Dg-8M-WTA" id="DBA-tW-gbF"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="actorsCollectionView" destination="Glw-Oi-vi6" id="Fua-on-ofZ"/>
