@@ -34,12 +34,14 @@ class MovieListViewController: UIViewController {
     }
     
     private func fetchRequest() {
-        model.fetchRequestForFilm {
+        model.fetchRequestForFilm { [weak self] in
+            guard let self = self else { return }
             DispatchQueue.main.async {
                 self.filmListCollectionView.reloadData()
             }
         }
-        model.fetchRequestForSerials {
+        model.fetchRequestForSerials { [weak self] in
+            guard let self = self else { return }
             DispatchQueue.main.async {
                 self.serialListCollectionView.reloadData()
             }
@@ -70,5 +72,24 @@ extension MovieListViewController: UICollectionViewDelegate, UICollectionViewDat
             return cell
         default: return UICollectionViewCell()
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        switch collectionView {
+        case filmListCollectionView:
+            let detailModel = model.detailModel(indexPath: indexPath, show: .film)
+            performSegue(withIdentifier: "detail", sender: detailModel)
+        case serialListCollectionView:
+            let detailModel = model.detailModel(indexPath: indexPath, show: .serial)
+            performSegue(withIdentifier: "detail", sender: detailModel)
+        default: break
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let detailVC = segue.destination as! DetailViewController
+        detailVC.model = sender as? DetailModelProtocol
+        navigationItem.backButtonTitle = ""
     }
 }

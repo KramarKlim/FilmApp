@@ -25,7 +25,7 @@ class FilmModel: FilmModelProtocol {
     }
     
     func getImage() -> String {
-        return DataManager.shared.imageURL + (film.poster_path ?? "-")
+        return DataManager.shared.getURL(number: 200) + (film.poster_path ?? "-")
     }
     
     func getTitle() -> String {
@@ -33,7 +33,7 @@ class FilmModel: FilmModelProtocol {
     }
     
     func getDate() -> String {
-        film.release_date?.convertDateFormater() ?? "Отсутствует"
+        film.release_date?.convertDateFormater(currentFormat: "yyyy-MM-dd", needFromat: "MMM dd, yyyy") ?? "Отсутствует"
         
     }
 }

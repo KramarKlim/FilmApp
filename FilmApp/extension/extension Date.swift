@@ -8,12 +8,12 @@
 import Foundation
 
 extension String {
-    func convertDateFormater() -> String
+    func convertDateFormater(currentFormat: String, needFromat: String) -> String
     {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.dateFormat = currentFormat
         let date = dateFormatter.date(from: self)
-        dateFormatter.dateFormat = "MMM dd, yyyy"
+        dateFormatter.dateFormat = needFromat
         return  dateFormatter.string(from: date!)
         
     }

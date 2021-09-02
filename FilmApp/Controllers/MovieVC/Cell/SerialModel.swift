@@ -15,7 +15,7 @@ class SerialModel: FilmModelProtocol {
     }
     
     func getImage() -> String {
-        return DataManager.shared.imageURL + (film.poster_path ?? "-")
+        return DataManager.shared.getURL(number: 200) + (film.poster_path ?? "-")
     }
     
     func getTitle() -> String {
@@ -23,6 +23,6 @@ class SerialModel: FilmModelProtocol {
     }
     
     func getDate() -> String {
-        film.first_air_date?.convertDateFormater() ?? "Отсутствует"
+        film.first_air_date?.convertDateFormater(currentFormat: "yyyy-MM-dd", needFromat: "MMM dd, yyyy") ?? "Отсутствует"
     }
 }

@@ -10,3 +10,7 @@ import Foundation
 enum CurrentShow {
     case film, serial
 }
+
+enum Error {
+    case web, image
+}
