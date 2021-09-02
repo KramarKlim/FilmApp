@@ -23,16 +23,14 @@ class DetailViewController: UIViewController {
     @IBOutlet var favouriteButton: UIBarButtonItem!
     @IBOutlet var starsStack: UIStackView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupView()
         setupCollectionView()
-        watchButton.layer.cornerRadius = 10
+        watchButton.layer.cornerRadius = 5
         
         favouriteButton.image = model.favouriteImage()
-        
     }
     
     //MARK: IBActions

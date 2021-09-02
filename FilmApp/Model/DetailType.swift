@@ -19,6 +19,7 @@ struct DetailType: Codable {
     let first_air_date: String?
     let homepage: String?
     let runtime: Int?
+    let number_of_seasons: Int?
 }
 
 struct Genre: Codable {

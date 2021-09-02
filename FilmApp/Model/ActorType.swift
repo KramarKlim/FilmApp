@@ -8,11 +8,11 @@
 import Foundation
 
 struct ActorType: Codable {
-    let crew: [Cast]?
+    let cast: [Cast]?
 }
 
 struct Cast: Codable {
     let profile_path: String?
     let name: String?
-    let job: String?
+    let character: String?
 }

@@ -15,6 +15,5 @@ extension String {
         let date = dateFormatter.date(from: self)
         dateFormatter.dateFormat = needFromat
         return  dateFormatter.string(from: date!)
-        
     }
 }

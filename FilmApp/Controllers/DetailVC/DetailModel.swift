@@ -32,7 +32,7 @@ protocol DetailModelProtocol {
 }
 
 class DetailModel: DetailModelProtocol {
-        
+    
     var show: CurrentShow
     
     var id: Int
@@ -40,7 +40,7 @@ class DetailModel: DetailModelProtocol {
     var detail: DetailType?
     
     var actor: [Cast] = []
-        
+    
     required init(show: CurrentShow, id: Int) {
         self.show = show
         self.id = id
@@ -55,7 +55,7 @@ class DetailModel: DetailModelProtocol {
     
     func fetchRequestForActor(completion: @escaping () -> Void) {
         NetworkManager.shared.fetchNetwork(string: DataManager.shared.getActor(detail: show, id: id), expecting: ActorType.self) { cast in
-            self.actor = cast.crew ?? []
+            self.actor = cast.cast ?? []
             completion()
         }
     }
@@ -69,7 +69,7 @@ class DetailModel: DetailModelProtocol {
         case .film:
             return (detail?.release_date?.convertDateFormater(currentFormat: "yyyy-MM-dd", needFromat: "YYYY") ?? "Неизвестно") + " • " + (detail?.genres?.first?.name ?? "Неизвестно") + " • " + (detail?.runtime?.minutesToHoursAndMinutes() ?? "Неизвестно")
         case .serial:
-            return (detail?.first_air_date?.convertDateFormater(currentFormat: "yyyy-MM-dd", needFromat: "YYYY") ?? "Неизвестно") + " • " + (detail?.genres?.first?.name ?? "Неизвестно")
+            return (detail?.first_air_date?.convertDateFormater(currentFormat: "yyyy-MM-dd", needFromat: "YYYY") ?? "Неизвестно") + " • " + (detail?.genres?.first?.name ?? "Неизвестно") + " • " + "Seasons: \(detail?.number_of_seasons?.description ?? "Неизвестно")"
         }
     }
     
@@ -81,7 +81,8 @@ class DetailModel: DetailModelProtocol {
     }
     
     func getRating() -> String {
-       return "\(detail?.vote_average ?? 0)"
+        guard let rating = detail?.vote_average else { return "Неизвестно"}
+        return rating.description
     }
     
     func getDesc() -> String {
@@ -90,11 +91,11 @@ class DetailModel: DetailModelProtocol {
     
     func getImage() -> String {
         guard let string = detail?.backdrop_path else { return DataManager.shared.getError(error: .image) }
-         return DataManager.shared.getURL(number: 500) + (string)
+        return DataManager.shared.getURL(number: 500) + (string)
     }
     
     func actorsModel(indexPath: IndexPath) -> ActorsModelProtocol? {
-         ActorsModel(actor: actor[indexPath.row])
+        ActorsModel(actor: actor[indexPath.row])
     }
     
     func searchWeb() -> SFSafariViewController {
@@ -108,8 +109,8 @@ class DetailModel: DetailModelProtocol {
         guard let heart = UIImage(systemName: "heart") else { return #imageLiteral(resourceName: "png-clipart-warning-icon-error-computer-icons-orange-error-icon-miscellaneous-angle-thumbnail")}
         guard let heartFill = UIImage(systemName: "heart.fill") else { return #imageLiteral(resourceName: "png-clipart-warning-icon-error-computer-icons-orange-error-icon-miscellaneous-angle-thumbnail")}
         if DataManager.shared.favourite.contains(id) {
-                return  heartFill
-            }
+            return  heartFill
+        }
         return heart
     }
     

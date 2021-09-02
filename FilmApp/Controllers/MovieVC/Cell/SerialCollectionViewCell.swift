@@ -17,7 +17,7 @@ class SerialCollectionViewCell: UICollectionViewCell {
             serialImage.layer.cornerRadius = 10
         }
     }
-
+    
     @IBOutlet var serialImage: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!

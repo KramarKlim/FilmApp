@@ -36,6 +36,5 @@ class FilmModel: FilmModelProtocol {
     
     func getDate() -> String {
         film.release_date?.convertDateFormater(currentFormat: "yyyy-MM-dd", needFromat: "MMM dd, yyyy") ?? "Отсутствует"
-        
     }
 }

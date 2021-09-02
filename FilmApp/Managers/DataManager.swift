@@ -10,10 +10,10 @@ import UIKit
 
 class DataManager {
     
-     static let shared = DataManager()
+    static let shared = DataManager()
     
     var favourite = Set<Int>()
-            
+    
     private init() {}
     
     func getShowList(show: CurrentShow) -> String {

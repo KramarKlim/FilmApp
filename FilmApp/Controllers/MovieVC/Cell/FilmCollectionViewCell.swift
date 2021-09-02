@@ -17,7 +17,7 @@ class FilmCollectionViewCell: UICollectionViewCell {
             filmImage.layer.cornerRadius = 10
         }
     }
-
+    
     @IBOutlet var filmImage: UIImageView!
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var titleLabel: UILabel!

@@ -23,8 +23,8 @@ class MovieListViewController: UIViewController {
         setupCollectionView()
         fetchRequest()
         self.navigationController?.navigationBar.topItem?.title = "KLIM"
-        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-}
+
+    }
     
     //MARK: Private Methods
     private func setupCollectionView() {

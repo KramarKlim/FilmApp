@@ -20,7 +20,7 @@ protocol ActorsModelProtocol {
 class ActorsModel: ActorsModelProtocol {
     
     var actor: Cast?
-        
+    
     required init(actor: Cast?) {
         self.actor = actor
     }
@@ -35,6 +35,6 @@ class ActorsModel: ActorsModelProtocol {
     }
     
     func getCharacter() -> String {
-        actor?.job ?? "Неизвестно"
+        actor?.character ?? "Неизвестно"
     }
 }
