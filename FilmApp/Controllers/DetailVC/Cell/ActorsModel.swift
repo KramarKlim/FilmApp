@@ -18,6 +18,7 @@ protocol ActorsModelProtocol {
 }
 
 class ActorsModel: ActorsModelProtocol {
+    
     var actor: Cast?
         
     required init(actor: Cast?) {

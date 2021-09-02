@@ -9,8 +9,10 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    //MARK: Public Property
     var model: DetailModelProtocol!
     
+    //MARK: IBOutlets
     @IBOutlet var showImage: UIImageView!
     @IBOutlet var ratingLabel: UILabel!
     @IBOutlet var descLabel: UILabel!
@@ -19,19 +21,21 @@ class DetailViewController: UIViewController {
     @IBOutlet var watchButton: UIButton!
     @IBOutlet var genreLabel: UILabel!
     @IBOutlet var favouriteButton: UIBarButtonItem!
+    @IBOutlet var starsStack: UIStackView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupView()
         setupCollectionView()
         watchButton.layer.cornerRadius = 10
         
-        actorsCollectionView.delegate = self
-        actorsCollectionView.dataSource = self
-        actorsCollectionView.register(UINib(nibName: "ActorsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "actors")
         favouriteButton.image = model.favouriteImage()
+        
     }
     
+    //MARK: IBActions
     @IBAction func favouriteButtonAction(_ sender: Any) {
         favouriteButton.image = model.saveImage(image: favouriteButton.image!)
     }
@@ -41,8 +45,11 @@ class DetailViewController: UIViewController {
         present(model.searchWeb(), animated: true)
     }
     
-    
+    //MARK: Private Methods
     private func setupCollectionView() {
+        actorsCollectionView.delegate = self
+        actorsCollectionView.dataSource = self
+        actorsCollectionView.register(UINib(nibName: "ActorsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "actors")
         model.fetchRequestForActor { [weak self] in
             guard let self = self else { return }
             DispatchQueue.main.async {
@@ -61,11 +68,20 @@ class DetailViewController: UIViewController {
                 self.titleLabel.text = self.model.getTitle()
                 self.genreLabel.text = self.model.getGenreYear()
                 self.showImage.applyGradient()
+                self.getStars()
             }
+        }
+    }
+    
+    private func getStars() {
+        for image in model.ratingStars() {
+            let imageView = UIImageView(image: image)
+            starsStack.addArrangedSubview(imageView)
         }
     }
 }
 
+//MARK: UICollectionViewDelegate, UICollectionViewDataSource
 extension DetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         model.numberOfCell()

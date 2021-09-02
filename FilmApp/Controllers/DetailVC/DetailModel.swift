@@ -28,6 +28,7 @@ protocol DetailModelProtocol {
     func searchWeb() -> SFSafariViewController
     func favouriteImage() -> UIImage
     func saveImage(image: UIImage) -> UIImage
+    func ratingStars() -> [UIImage]
 }
 
 class DetailModel: DetailModelProtocol {
@@ -88,7 +89,8 @@ class DetailModel: DetailModelProtocol {
     }
     
     func getImage() -> String {
-         DataManager.shared.getURL(number: 500) + (detail?.backdrop_path ?? "Неизвестно")
+        guard let string = detail?.backdrop_path else { return DataManager.shared.getError(error: .image) }
+         return DataManager.shared.getURL(number: 500) + (string)
     }
     
     func actorsModel(indexPath: IndexPath) -> ActorsModelProtocol? {
@@ -103,22 +105,46 @@ class DetailModel: DetailModelProtocol {
     }
     
     func favouriteImage() -> UIImage {
-        for images in DataManager.shared.favourite {
-            if id == images {
-                return  UIImage(systemName: "heart.fill")!
+        guard let heart = UIImage(systemName: "heart") else { return #imageLiteral(resourceName: "png-clipart-warning-icon-error-computer-icons-orange-error-icon-miscellaneous-angle-thumbnail")}
+        guard let heartFill = UIImage(systemName: "heart.fill") else { return #imageLiteral(resourceName: "png-clipart-warning-icon-error-computer-icons-orange-error-icon-miscellaneous-angle-thumbnail")}
+        if DataManager.shared.favourite.contains(id) {
+                return  heartFill
             }
-        }
-        return UIImage(systemName: "heart")!
+        return heart
     }
     
     func saveImage(image: UIImage) -> UIImage {
-        if image == UIImage(systemName: "heart") {
+        guard let heart = UIImage(systemName: "heart") else { return #imageLiteral(resourceName: "png-clipart-warning-icon-error-computer-icons-orange-error-icon-miscellaneous-angle-thumbnail")}
+        guard let heartFill = UIImage(systemName: "heart.fill") else { return #imageLiteral(resourceName: "png-clipart-warning-icon-error-computer-icons-orange-error-icon-miscellaneous-angle-thumbnail")}
+        if image == heart {
             DataManager.shared.favourite.insert(id)
-            return UIImage(systemName: "heart.fill")!
-        } else if image == UIImage(systemName: "heart.fill")! {
+            return heartFill
+        } else if image == heartFill {
             DataManager.shared.favourite.remove(id)
-            return UIImage(systemName: "heart")!
+            return heart
         }
         return #imageLiteral(resourceName: "3126608")
+    }
+    
+    func ratingStars() -> [UIImage] {
+        let number = ((detail?.vote_average ?? 0.0) / 2)
+        guard let imageEmpty = UIImage(systemName: "star") else { return [#imageLiteral(resourceName: "png-clipart-warning-icon-error-computer-icons-orange-error-icon-miscellaneous-angle-thumbnail")]}
+        guard let imageFull = UIImage(systemName: "star.fill") else { return [#imageLiteral(resourceName: "png-clipart-warning-icon-error-computer-icons-orange-error-icon-miscellaneous-angle-thumbnail")]}
+        switch number {
+        case 0.0...0.99:
+            return [imageEmpty, imageEmpty, imageEmpty, imageEmpty, imageEmpty]
+        case 1.0...1.99:
+            return [imageFull, imageEmpty, imageEmpty, imageEmpty, imageEmpty]
+        case 2.0...2.99:
+            return [imageFull, imageFull, imageEmpty, imageEmpty, imageEmpty]
+        case 3.0...3.99:
+            return [imageFull, imageFull, imageFull, imageEmpty, imageEmpty]
+        case 4.0...4.99:
+            return [imageFull, imageFull, imageFull, imageFull, imageEmpty]
+        case 5.0:
+            return [imageFull, imageFull, imageFull, imageFull, imageFull]
+        default: break
+        }
+        return [imageEmpty]
     }
 }

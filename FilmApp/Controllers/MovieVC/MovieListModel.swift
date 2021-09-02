@@ -19,6 +19,7 @@ protocol MovieModelProtocol {
 }
 
 class MovieModel: MovieModelProtocol {
+    
     var filmList: [Result] = []
     
     var serialList: [Result] = []

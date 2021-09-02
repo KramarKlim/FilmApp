@@ -8,8 +8,12 @@
 import UIKit
 
 class MovieListViewController: UIViewController {
+    
+    //MARK: Public Property
     var model: MovieModelProtocol!
     
+    
+    //MARK: IBOutlets
     @IBOutlet var filmListCollectionView: UICollectionView!
     @IBOutlet var serialListCollectionView: UICollectionView!
     
@@ -22,6 +26,7 @@ class MovieListViewController: UIViewController {
         self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
 }
     
+    //MARK: Private Methods
     private func setupCollectionView() {
         filmListCollectionView.register(UINib(nibName: "FilmCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "film")
         serialListCollectionView.register(UINib(nibName: "SerialCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "serial")
@@ -49,6 +54,7 @@ class MovieListViewController: UIViewController {
     }
 }
 
+//MARK: UICollectionViewDelegate, UICollectionViewDataSource
 extension MovieListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {

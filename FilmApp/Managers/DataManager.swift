@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class DataManager {
+    
      static let shared = DataManager()
     
     var favourite = Set<Int>()

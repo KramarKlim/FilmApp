@@ -8,6 +8,7 @@
 import UIKit
 
 class ActorsCollectionViewCell: UICollectionViewCell {
+    
     var model: ActorsModelProtocol! {
         didSet {
             if !isReuse {
@@ -32,5 +33,6 @@ class ActorsCollectionViewCell: UICollectionViewCell {
     private func setup() {
         isReuse = true
         actorImage.clipsToBounds = true
+        actorImage.layer.cornerRadius = 10
     }
 }

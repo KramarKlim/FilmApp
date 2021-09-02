@@ -18,6 +18,7 @@ protocol FilmModelProtocol {
 }
 
 class FilmModel: FilmModelProtocol {
+    
     var film: Result
     
     required init(film: Result) {
@@ -25,7 +26,8 @@ class FilmModel: FilmModelProtocol {
     }
     
     func getImage() -> String {
-        return DataManager.shared.getURL(number: 200) + (film.poster_path ?? "-")
+        guard let string = film.poster_path else { return DataManager.shared.getError(error: .image)}
+        return DataManager.shared.getURL(number: 200) + (string)
     }
     
     func getTitle() -> String {
