@@ -199,11 +199,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0g3-sr-Uck">
-                                <rect key="frame" x="60" y="502" width="200" height="50"/>
+                                <rect key="frame" x="70" y="522" width="180" height="30"/>
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="7of-2W-ovv"/>
-                                    <constraint firstAttribute="height" constant="50" id="xHg-Ba-rfN"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="7of-2W-ovv"/>
+                                    <constraint firstAttribute="height" constant="30" id="xHg-Ba-rfN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <state key="normal" title="Watch Now">
@@ -267,7 +267,6 @@
         <!--Navigation Controller-->
         <scene sceneID="EhO-eM-r9a">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hgb-Vr-emf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TfJ-dP-M2z" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" id="X7J-hk-J36">
                         <color key="badgeColor" systemColor="systemRedColor"/>
@@ -289,6 +288,7 @@
                         <segue destination="fST-8J-UDe" kind="relationship" relationship="rootViewController" id="qiR-6Z-psI"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hgb-Vr-emf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1875" y="151.05633802816902"/>
         </scene>
