@@ -9,6 +9,7 @@ import UIKit
 
 class FilmCollectionViewCell: UICollectionViewCell {
     
+    //MARK: Public Property
     var model: FilmModelProtocol! {
         didSet {
             titleLabel.text = model.getTitle()

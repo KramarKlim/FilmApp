@@ -9,6 +9,7 @@ import UIKit
 
 class ActorsCollectionViewCell: UICollectionViewCell {
     
+    //MARK: Public Property
     var model: ActorsModelProtocol! {
         didSet {
             actorImage.fetchImage(from: model.getImage())
