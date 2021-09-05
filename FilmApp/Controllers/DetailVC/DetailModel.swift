@@ -75,8 +75,10 @@ class DetailModel: DetailModelProtocol {
     
     func getTitle() -> String {
         switch show {
-        case .film: return detail?.title ?? "Неизвестно"
-        case .serial: return detail?.name ?? "Неизвестно"
+        case .film:
+            return detail?.title ?? "Неизвестно"
+        case .serial:
+            return detail?.name ?? "Неизвестно"
         }
     }
     

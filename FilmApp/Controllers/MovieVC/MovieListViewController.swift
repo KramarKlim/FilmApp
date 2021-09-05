@@ -58,8 +58,10 @@ class MovieListViewController: UIViewController {
 extension MovieListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
-        case filmListCollectionView: return model.numberOfCells(type: .film)
-        case serialListCollectionView: return model.numberOfCells(type: .serial)
+        case filmListCollectionView:
+            return model.numberOfCells(type: .film)
+        case serialListCollectionView:
+            return model.numberOfCells(type: .serial)
         default: return 0
         }
     }

@@ -40,22 +40,28 @@ class MovieModel: MovieModelProtocol {
     
     func numberOfCells(type: CurrentShow) -> Int {
         switch type {
-        case .film: return filmList.count
-        case .serial: return serialList.count
+        case .film:
+            return filmList.count
+        case .serial:
+            return serialList.count
         }
     }
     
     func filmModel(type: CurrentShow, indexPath: IndexPath) -> FilmModelProtocol? {
         switch type {
-        case .film: return FilmModel(film: filmList[indexPath.row])
-        case .serial: return SerialModel(film: serialList[indexPath.row])
+        case .film:
+            return FilmModel(film: filmList[indexPath.row])
+        case .serial:
+            return SerialModel(film: serialList[indexPath.row])
         }
     }
     
     func detailModel(indexPath: IndexPath, show: CurrentShow) -> DetailModelProtocol? {
         switch show {
-        case .film: return DetailModel(show: show, id: filmList[indexPath.row].id ?? 0)
-        case .serial: return DetailModel(show: show, id: serialList[indexPath.row].id ?? 0)
+        case .film:
+            return DetailModel(show: show, id: filmList[indexPath.row].id ?? 0)
+        case .serial:
+            return DetailModel(show: show, id: serialList[indexPath.row].id ?? 0)
         }
     }
 }
