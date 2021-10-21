@@ -245,6 +245,9 @@
                                                 <state key="normal" title="Watch Now">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="watchButtonAction:" destination="bgc-LO-HUB" eventType="touchUpInside" id="DIs-kT-GVB"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
