@@ -134,15 +134,15 @@ class DetailModel: DetailModelProtocol {
         guard let imageEmpty = UIImage(systemName: "star") else { return [#imageLiteral(resourceName: "png-clipart-warning-icon-error-computer-icons-orange-error-icon-miscellaneous-angle-thumbnail")]}
         guard let imageFull = UIImage(systemName: "star.fill") else { return [#imageLiteral(resourceName: "png-clipart-warning-icon-error-computer-icons-orange-error-icon-miscellaneous-angle-thumbnail")]}
         switch number {
-        case 0.0...1.9:
+        case 0.0:
             return [imageEmpty, imageEmpty, imageEmpty, imageEmpty, imageEmpty]
-        case 2.0...3.9:
+        case 0.1...2.9:
             return [imageFull, imageEmpty, imageEmpty, imageEmpty, imageEmpty]
-        case 4.0...5.9:
+        case 3.0...4.9:
             return [imageFull, imageFull, imageEmpty, imageEmpty, imageEmpty]
-        case 6.0...7.9:
+        case 5.0...6.9:
             return [imageFull, imageFull, imageFull, imageEmpty, imageEmpty]
-        case 8.0...9.0:
+        case 7.0...8.9:
             return [imageFull, imageFull, imageFull, imageFull, imageEmpty]
         case 9.1...10.0:
             return [imageFull, imageFull, imageFull, imageFull, imageFull]
