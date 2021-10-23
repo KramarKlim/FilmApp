@@ -130,21 +130,21 @@ class DetailModel: DetailModelProtocol {
     }
     
     func ratingStars() -> [UIImage] {
-        let number = ((detail?.vote_average ?? 0.0) / 2)
+        let number = (detail?.vote_average ?? 0.0)
         guard let imageEmpty = UIImage(systemName: "star") else { return [#imageLiteral(resourceName: "png-clipart-warning-icon-error-computer-icons-orange-error-icon-miscellaneous-angle-thumbnail")]}
         guard let imageFull = UIImage(systemName: "star.fill") else { return [#imageLiteral(resourceName: "png-clipart-warning-icon-error-computer-icons-orange-error-icon-miscellaneous-angle-thumbnail")]}
         switch number {
-        case 0.0...0.99:
+        case 0.0...1.9:
             return [imageEmpty, imageEmpty, imageEmpty, imageEmpty, imageEmpty]
-        case 1.0...1.99:
+        case 2.0...3.9:
             return [imageFull, imageEmpty, imageEmpty, imageEmpty, imageEmpty]
-        case 2.0...2.99:
+        case 4.0...5.9:
             return [imageFull, imageFull, imageEmpty, imageEmpty, imageEmpty]
-        case 3.0...3.99:
+        case 6.0...7.9:
             return [imageFull, imageFull, imageFull, imageEmpty, imageEmpty]
-        case 4.0...4.99:
+        case 8.0...9.0:
             return [imageFull, imageFull, imageFull, imageFull, imageEmpty]
-        case 5.0:
+        case 9.1...10.0:
             return [imageFull, imageFull, imageFull, imageFull, imageFull]
         default: break
         }

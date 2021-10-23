@@ -15,7 +15,7 @@ class ActorsCollectionViewCell: UICollectionViewCell {
             actorImage.fetchImage(from: model.getImage())
             nameLabel.text = model.getName()
             characterLabel.text = model.getCharacter()
-            actorImage.layer.cornerRadius = 26
+            actorImage.layer.cornerRadius = 37
             actorImage.clipsToBounds = true
         }
     }
